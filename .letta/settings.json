@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(backend/**)",
+      "Edit(frontend/app/**)",
+      "Edit(frontend/components/**)",
+      "Edit(frontend/**)",
+      "Bash(Get-ChildItem -Force \"C:\\Users\\ACER\\.letta\\agents\\agent-f6899849-171c-45de-9aa2-457f635cda5c\\memory\")",
+      "Bash(Get-ChildItem -Force)",
+      "Bash(Get-Content backend/package.json -ErrorAction SilentlyContinue)"
+    ]
+  }
+}

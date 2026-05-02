@@ -1,0 +1,67 @@
+import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
+import { PrismaClient } from '@prisma/client';
+
+@Injectable()
+export class PrismaService implements OnModuleInit, OnModuleDestroy {
+  private prisma: PrismaClient;
+
+  constructor() {
+    this.prisma = new PrismaClient({
+      datasourceUrl: process.env.DIRECT_URL || process.env.DATABASE_URL,
+      log: ['error', 'warn'],
+    });
+    console.log('PrismaService initialized with Direct URL if available');
+  }
+
+  async onModuleInit() {
+    await this.prisma.$connect();
+  }
+
+  async onModuleDestroy() {
+    await this.prisma.$disconnect();
+  }
+
+  get user() {
+    return this.prisma.user;
+  }
+
+  get category() {
+    return this.prisma.category;
+  }
+
+  get product() {
+    return this.prisma.product;
+  }
+
+  get cartItem() {
+    return this.prisma.cartItem;
+  }
+
+  get address() {
+    return this.prisma.address;
+  }
+
+  get order() {
+    return this.prisma.order;
+  }
+
+  get orderItem() {
+    return this.prisma.orderItem;
+  }
+
+  get favorite() {
+    return this.prisma.favorite;
+  }
+
+  get promo() {
+    return this.prisma.promo;
+  }
+
+  get promoUsage() {
+    return this.prisma.promoUsage;
+  }
+
+  get newsletterSubscriber() {
+    return this.prisma.newsletterSubscriber;
+  }
+}
