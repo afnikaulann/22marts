@@ -8,7 +8,9 @@ import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
 import { getPaymentStatus } from "@/lib/api";
 
-export default function CheckoutSuksesPage() {
+import { Suspense } from "react";
+
+function CheckoutSuksesContent() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get("order_id");
   const statusParam = searchParams.get("status");
@@ -115,5 +117,17 @@ export default function CheckoutSuksesPage() {
         </div>
       </main>
     </div>
+  );
+}
+
+export default function CheckoutSuksesPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-zinc-50">
+        <Loader2 className="h-10 w-10 animate-spin text-zinc-400" />
+      </div>
+    }>
+      <CheckoutSuksesContent />
+    </Suspense>
   );
 }
