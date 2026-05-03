@@ -7,7 +7,8 @@ import Image from "next/image";
 import { Mail, Lock, Eye, EyeOff, User, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Navbar } from "@/components/navbar";
+import dynamic from "next/dynamic";
+const Navbar = dynamic(() => import("@/components/navbar").then(mod => mod.Navbar), { ssr: true });
 import { register } from "@/lib/api";
 
 export default function DaftarPage() {

@@ -19,7 +19,11 @@ const nextConfig: NextConfig = {
         hostname: "pqcexuqenjfudrwefnql.supabase.co",
       },
     ],
+    minimumCacheTTL: 31536000,
+    formats: ['image/avif', 'image/webp'],
   },
+  reactStrictMode: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;

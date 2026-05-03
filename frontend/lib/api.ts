@@ -1,4 +1,4 @@
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';
+const API_URL = 'http://localhost:4000/api';
 
 // Mapping nama kategori ke gambar Unsplash (Real Photo)
 export const categoryImages: Record<string, string> = {
@@ -166,7 +166,9 @@ export async function changePassword(userId: string, oldPassword: string, newPas
 // Categories
 export async function getCategories(): Promise<ApiResponse<Category[]>> {
   try {
-    const res = await fetch(`${API_URL}/categories`, { cache: 'no-store' });
+    const res = await fetch(`${API_URL}/categories`, { 
+      next: { revalidate: 3600 } // Cache selama 1 jam
+    });
     const json = await res.json();
     if (!res.ok) return { error: json.message || 'Gagal memuat kategori' };
     return { data: json };
@@ -244,7 +246,9 @@ export async function getProducts(categoryId?: string): Promise<ApiResponse<Prod
     const url = categoryId
       ? `${API_URL}/products?categoryId=${categoryId}`
       : `${API_URL}/products`;
-    const res = await fetch(url, { cache: 'no-store' });
+    const res = await fetch(url, { 
+      next: { revalidate: 3600 } // Cache selama 1 jam
+    });
     const json = await res.json();
     if (!res.ok) return { error: json.message || 'Gagal memuat produk' };
     return { data: json };

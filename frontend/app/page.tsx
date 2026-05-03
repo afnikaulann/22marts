@@ -11,11 +11,14 @@ import {
   Mail,
   ChevronRight,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/navbar";
 import { Button } from "@/components/ui/button";
-import { WaBanner } from "@/components/wa-banner";
-import { Footer } from "@/components/footer";
-import { PromoSection } from "@/components/promo-section";
+
+// Lazy loading komponen di bawah fold
+const PromoSection = dynamic(() => import("@/components/promo-section").then(mod => mod.PromoSection), { ssr: true });
+const WaBanner = dynamic(() => import("@/components/wa-banner").then(mod => mod.WaBanner), { ssr: true });
+const Footer = dynamic(() => import("@/components/footer").then(mod => mod.Footer), { ssr: true });
 
 import { getCategories, getProducts, getPromos, getCategoryImage } from "@/lib/api";
 import { ImageIcon } from "lucide-react";
@@ -176,7 +179,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <PromoSection />
+        <PromoSection initialPromos={promosRes.data || []} />
 
         {/* Products */}
         <section className="pb-16 sm:pb-24 pt-8 sm:pt-12">

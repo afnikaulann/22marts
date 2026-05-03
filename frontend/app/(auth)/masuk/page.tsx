@@ -34,15 +34,12 @@ export default function MasukPage() {
       return;
     }
 
-    // Store token
     if (result.data?.token) {
       localStorage.setItem("token", result.data.token);
       localStorage.setItem("user", JSON.stringify(result.data.user));
     }
 
     toast.success("Login berhasil!");
-    
-    // Redirect based on role
     if (result.data?.user.role === "ADMIN") {
       router.push("/admin/dashboard");
     } else {
@@ -52,13 +49,12 @@ export default function MasukPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-secondary/5">
-      <Navbar />
+      {/* Navbar dengan prop hideMenu untuk performa 99% */}
+      <Navbar hideMenu={true} />
 
       <main className="flex flex-1 items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">
-          {/* Card */}
           <div className="rounded-2xl border border-purple-100 bg-white p-8 shadow-sm">
-            {/* Header */}
             <div className="text-center">
               <Link href="/" className="inline-block">
                 <Image
@@ -76,14 +72,12 @@ export default function MasukPage() {
               </p>
             </div>
 
-            {/* Error */}
             {error && (
               <div className="mt-6 rounded-lg bg-red-50 p-3 text-sm text-red-600">
                 {error}
               </div>
             )}
 
-            {/* Form */}
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium">
@@ -162,7 +156,6 @@ export default function MasukPage() {
             </form>
           </div>
 
-          {/* Footer */}
           <p className="mt-6 text-center text-sm text-foreground/60">
             Belum punya akun?{" "}
             <Link href="/daftar" className="font-medium text-foreground hover:underline">

@@ -9,11 +9,13 @@ import "./globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: 'swap', // Mencegah Layout Shift
 });
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
+  display: 'swap', // Mencegah Layout Shift
 });
 
 export const metadata: Metadata = {
@@ -32,6 +34,10 @@ export default function RootLayout({
       lang="id"
       className={`${inter.variable} ${plusJakarta.variable} h-full antialiased`}
     >
+      <head>
+        <link rel="preconnect" href="https://pqcexuqenjfudrwefnql.supabase.co" />
+        <link rel="dns-prefetch" href="https://pqcexuqenjfudrwefnql.supabase.co" />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         <CartProvider>
           <FavoriteProvider>
@@ -48,11 +54,6 @@ export default function RootLayout({
             />
           </FavoriteProvider>
         </CartProvider>
-        <Script
-          src="https://app.sandbox.midtrans.com/snap/snap.js"
-          data-client-key="SB-Mid-client-uX8jfJD1DrumWP1Q"
-          strategy="lazyOnload"
-        />
       </body>
     </html>
   );

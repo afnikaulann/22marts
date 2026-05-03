@@ -7,29 +7,18 @@ import { getPromos, Promo } from "@/lib/api";
 import { toast } from "sonner";
 import Link from "next/link";
 
-export function PromoSection() {
+export function PromoSection({ initialPromos = [] }: { initialPromos?: Promo[] }) {
   const [promos, setPromos] = useState<Promo[]>([]);
-  const [loading, setLoading] = useState(true);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
 
   useEffect(() => {
-    async function loadPromos() {
-      try {
-        const res = await getPromos();
-        if (res.data) {
-          const activePromos = res.data
-            .filter((p) => p.isActive && new Date(p.endDate) > new Date())
-            .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-          setPromos(activePromos);
-        }
-      } catch (error) {
-        console.error("Failed to load promos:", error);
-      } finally {
-        setLoading(false);
-      }
+    if (initialPromos.length > 0) {
+      const activePromos = initialPromos
+        .filter((p) => p.isActive && new Date(p.endDate) > new Date())
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+      setPromos(activePromos);
     }
-    loadPromos();
-  }, []);
+  }, [initialPromos]);
 
   const copyToClipboard = (code: string) => {
     navigator.clipboard.writeText(code);
@@ -38,7 +27,6 @@ export function PromoSection() {
     setTimeout(() => setCopiedCode(null), 2000);
   };
 
-  if (loading) return null;
 
   return (
     <section className="pt-12 pb-4 bg-white">

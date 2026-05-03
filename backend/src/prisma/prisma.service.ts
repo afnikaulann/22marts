@@ -7,10 +7,9 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
 
   constructor() {
     this.prisma = new PrismaClient({
-      datasourceUrl: process.env.DIRECT_URL || process.env.DATABASE_URL,
+      datasourceUrl: process.env.DATABASE_URL || process.env.DIRECT_URL,
       log: ['error', 'warn'],
     });
-    console.log('PrismaService initialized with Direct URL if available');
   }
 
   async onModuleInit() {
