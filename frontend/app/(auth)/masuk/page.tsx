@@ -49,8 +49,7 @@ export default function MasukPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-secondary/5">
-      {/* Navbar dengan prop hideMenu untuk performa 99% */}
-      <Navbar hideMenu={true} />
+      <Navbar />
 
       <main className="flex flex-1 items-center justify-center px-4 py-12">
         <div className="w-full max-w-md">

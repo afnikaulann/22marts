@@ -36,7 +36,7 @@ interface User {
   role: string;
 }
 
-export function Navbar({ hideMenu = false }: { hideMenu?: boolean }) {
+export function Navbar() {
   const router = useRouter();
   const { count: cartCount } = useCart();
   const { count: favoriteCount } = useFavorite();
@@ -92,32 +92,28 @@ export function Navbar({ hideMenu = false }: { hideMenu?: boolean }) {
           </Link>
 
           {/* Desktop Nav */}
-          {!hideMenu && (
-            <div className="hidden items-center gap-1 lg:flex">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-black transition-colors hover:bg-zinc-100"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          )}
+          <div className="hidden items-center gap-1 lg:flex">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-lg px-3 py-2 text-sm font-medium text-black transition-colors hover:bg-zinc-100"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
 
           {/* Desktop Actions */}
           <div className="hidden items-center gap-1 lg:flex">
-            {!hideMenu && (
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                className="text-black hover:bg-zinc-100"
-                onClick={() => setIsSearchOpen(true)}
-              >
-                <Search className="h-5 w-5" />
-              </Button>
-            )}
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="text-black hover:bg-zinc-100"
+              onClick={() => setIsSearchOpen(true)}
+            >
+              <Search className="h-5 w-5" />
+            </Button>
             <Link href="/wishlist">
               <Button variant="ghost" size="icon" className="relative text-black hover:bg-zinc-100">
                 <Heart className="h-5 w-5" />
@@ -204,32 +200,29 @@ export function Navbar({ hideMenu = false }: { hideMenu?: boolean }) {
             )}
           </div>
 
+          {/* Mobile Actions */}
           <div className="flex items-center gap-1 lg:hidden">
-            {!hideMenu && (
-              <>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className="text-black hover:bg-zinc-100"
-                  onClick={() => setIsSearchOpen(true)}
-                >
-                  <Search className="h-5 w-5" />
-                </Button>
-                <Link href="/keranjang">
-                  <Button variant="ghost" size="icon" className="relative text-black hover:bg-zinc-100">
-                    <ShoppingCart className="h-5 w-5" />
-                    {cartCount > 0 && (
-                      <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-bold">
-                        {cartCount > 99 ? "99+" : cartCount}
-                      </span>
-                    )}
-                  </Button>
-                </Link>
-                <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-black hover:bg-zinc-100">
-                  {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                </Button>
-              </>
-            )}
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="text-black hover:bg-zinc-100"
+              onClick={() => setIsSearchOpen(true)}
+            >
+              <Search className="h-5 w-5" />
+            </Button>
+            <Link href="/keranjang">
+              <Button variant="ghost" size="icon" className="relative text-black hover:bg-zinc-100">
+                <ShoppingCart className="h-5 w-5" />
+                {cartCount > 0 && (
+                  <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-bold">
+                    {cartCount > 99 ? "99+" : cartCount}
+                  </span>
+                )}
+              </Button>
+            </Link>
+            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-black hover:bg-zinc-100">
+              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
           </div>
         </div>
 

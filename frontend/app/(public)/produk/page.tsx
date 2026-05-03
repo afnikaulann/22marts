@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import {
   Search,
   ShoppingBag,
@@ -28,6 +28,7 @@ import { getProducts, getCategories, getPromos, Product, Category, Promo } from 
 import { Footer } from "@/components/footer";
 
 function ProductsContent() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const initialCategory = searchParams?.get("category") || "";
   const initialSearch = searchParams?.get("search") || "";
