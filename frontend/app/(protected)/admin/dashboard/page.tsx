@@ -278,7 +278,7 @@ export default function AdminDashboardPage() {
                   <YAxis tick={{ fontSize: 11, fill: "#71717a" }} axisLine={false} tickLine={false} tickFormatter={(v) => formatCompact(v)} />
                   <Tooltip
                     contentStyle={{ fontSize: 12, borderRadius: 8, border: "1px solid #e4e4e7" }}
-                    formatter={(value: number, name: string) => [name === "pendapatan" ? formatPrice(value) : value, name === "pendapatan" ? "Pendapatan" : "Pesanan"]}
+                    formatter={(value: any, name: string) => [name === "pendapatan" ? formatPrice(Number(value) || 0) : value, name === "pendapatan" ? "Pendapatan" : "Pesanan"]}
                   />
                   <Area type="monotone" dataKey="pendapatan" stroke="#22c55e" fill="#22c55e" fillOpacity={0.1} strokeWidth={2} />
                 </AreaChart>
