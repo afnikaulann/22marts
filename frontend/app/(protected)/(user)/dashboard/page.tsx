@@ -247,7 +247,7 @@ export default function DashboardPage() {
                   <YAxis tick={{ fontSize: 11, fill: "#71717a" }} axisLine={false} tickLine={false} tickFormatter={(v) => formatCompact(v)} />
                   <Tooltip
                     contentStyle={{ fontSize: 12, borderRadius: 8, border: "1px solid #e4e4e7" }}
-                    formatter={(value: number) => [formatPrice(value), "Pengeluaran"]}
+                    formatter={(value: any) => [formatPrice(Number(value) || 0), "Pengeluaran"]}
                   />
                   <Area type="monotone" dataKey="pengeluaran" stroke="#18181b" fill="#18181b" fillOpacity={0.05} strokeWidth={2} />
                 </AreaChart>
