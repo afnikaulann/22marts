@@ -1,4 +1,8 @@
-import { Injectable, BadRequestException, ConflictException } from '@nestjs/common';
+import {
+  Injectable,
+  BadRequestException,
+  ConflictException,
+} from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 import { createClient } from '@supabase/supabase-js';
 import * as Midtrans from 'midtrans-client';
@@ -72,7 +76,10 @@ export class PaymentService {
     }
 
     // Calculate total
-    const subtotal = cart.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+    const subtotal = cart.reduce(
+      (sum, item) => sum + item.product.price * item.quantity,
+      0,
+    );
 
     // Apply promo if provided
     let discount = 0;
@@ -89,14 +96,16 @@ export class PaymentService {
             let userAlreadyUsed = false;
             if (promo.perUserLimit > 0) {
               const userUsage = await this.prisma.promoUsage.findUnique({
-                where: { userId_promoId: { userId: data.userId, promoId: promo.id } },
+                where: {
+                  userId_promoId: { userId: data.userId, promoId: promo.id },
+                },
               });
               if (userUsage) userAlreadyUsed = true;
             }
 
             if (!userAlreadyUsed && subtotal >= promo.minPurchase) {
               if (promo.discountType === 'PERCENTAGE') {
-                discount = Math.floor(subtotal * promo.discountValue / 100);
+                discount = Math.floor((subtotal * promo.discountValue) / 100);
                 if (promo.maxDiscount && discount > promo.maxDiscount) {
                   discount = promo.maxDiscount;
                 }
@@ -111,7 +120,9 @@ export class PaymentService {
                 data: { usedCount: { increment: 1 } },
               });
               await this.prisma.promoUsage.upsert({
-                where: { userId_promoId: { userId: data.userId, promoId: promo.id } },
+                where: {
+                  userId_promoId: { userId: data.userId, promoId: promo.id },
+                },
                 create: { userId: data.userId, promoId: promo.id },
                 update: {},
               });
@@ -126,7 +137,7 @@ export class PaymentService {
     // Generate order ID
     const now = new Date();
     const dateStr = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}`;
-    
+
     // In-memory atomic cache optimization
     if (this.orderSequenceCache.date !== dateStr) {
       const startOfDay = new Date();
@@ -148,14 +159,19 @@ export class PaymentService {
           if (!isNaN(parsedSeq)) lastOrderNumber = parsedSeq;
         }
       }
-      this.orderSequenceCache = { date: dateStr, lastSequence: lastOrderNumber };
+      this.orderSequenceCache = {
+        date: dateStr,
+        lastSequence: lastOrderNumber,
+      };
     }
 
     this.orderSequenceCache.lastSequence += 1;
     const orderId = `22MART-${dateStr}-${String(this.orderSequenceCache.lastSequence).padStart(4, '0')}`;
 
     // Get user
-    const user = await this.prisma.user.findUnique({ where: { id: data.userId } });
+    const user = await this.prisma.user.findUnique({
+      where: { id: data.userId },
+    });
 
     // Create Midtrans transaction
     const transactionPayload: any = {
@@ -198,7 +214,7 @@ export class PaymentService {
         idempotencyKey: data.idempotencyKey,
         subtotal,
         discount,
-        promoCode: discount > 0 ? (data.promoCode || null) : null,
+        promoCode: discount > 0 ? data.promoCode || null : null,
         total,
         shippingName: address.name,
         shippingPhone: address.phone,
@@ -271,14 +287,20 @@ export class PaymentService {
   async getOrders(userId: string) {
     return this.prisma.order.findMany({
       where: { userId },
-      include: { items: { include: { product: true } }, user: { select: { id: true, name: true, email: true } } },
+      include: {
+        items: { include: { product: true } },
+        user: { select: { id: true, name: true, email: true } },
+      },
       orderBy: { createdAt: 'desc' },
     });
   }
 
   async getAllOrders() {
     return this.prisma.order.findMany({
-      include: { items: { include: { product: true } }, user: { select: { id: true, name: true, email: true } } },
+      include: {
+        items: { include: { product: true } },
+        user: { select: { id: true, name: true, email: true } },
+      },
       orderBy: { createdAt: 'desc' },
     });
   }
@@ -286,15 +308,24 @@ export class PaymentService {
   async getOrderByOrderId(orderId: string) {
     return this.prisma.order.findUnique({
       where: { orderId },
-      include: { items: { include: { product: true } }, user: { select: { id: true, name: true, email: true } } },
+      include: {
+        items: { include: { product: true } },
+        user: { select: { id: true, name: true, email: true } },
+      },
     });
   }
 
-  async updateOrderStatus(orderId: string, status: 'DIPROSES' | 'DIKIRIM' | 'SELESAI') {
+  async updateOrderStatus(
+    orderId: string,
+    status: 'DIPROSES' | 'DIKIRIM' | 'SELESAI',
+  ) {
     return this.prisma.order.update({
       where: { orderId },
       data: { status },
-      include: { items: { include: { product: true } }, user: { select: { id: true, name: true, email: true } } },
+      include: {
+        items: { include: { product: true } },
+        user: { select: { id: true, name: true, email: true } },
+      },
     });
   }
 }

@@ -54,9 +54,10 @@ export class CategoryService {
     }
 
     // Ensure isActive is boolean
-    const isActive = typeof dto.isActive === 'string' 
-      ? dto.isActive === 'true' 
-      : dto.isActive ?? true;
+    const isActive =
+      typeof dto.isActive === 'string'
+        ? dto.isActive === 'true'
+        : (dto.isActive ?? true);
 
     return this.prisma.category.create({
       data: {
@@ -91,9 +92,10 @@ export class CategoryService {
 
     // Ensure isActive is boolean if present
     if (data.isActive !== undefined) {
-      data.isActive = typeof data.isActive === 'string' 
-        ? data.isActive === 'true' 
-        : data.isActive;
+      data.isActive =
+        typeof data.isActive === 'string'
+          ? data.isActive === 'true'
+          : data.isActive;
     }
 
     return this.prisma.category.update({

@@ -42,7 +42,10 @@ export class ProductService {
 
     const salesMap = new Map<string, number>();
     for (const item of orderItems) {
-      salesMap.set(item.productId, (salesMap.get(item.productId) || 0) + item.quantity);
+      salesMap.set(
+        item.productId,
+        (salesMap.get(item.productId) || 0) + item.quantity,
+      );
     }
 
     const sortedProductIds = Array.from(salesMap.entries())
