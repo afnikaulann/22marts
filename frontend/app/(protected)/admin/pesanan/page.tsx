@@ -236,8 +236,8 @@ export default function KelolaPesananPage() {
                   <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 11, fill: "#71717a" }} axisLine={false} tickLine={false} tickFormatter={(v) => formatCompact(v)} />
                   <Tooltip
                     contentStyle={{ fontSize: 12, borderRadius: 8, border: "1px solid #e4e4e7" }}
-                    formatter={(value: number, name: string) => [
-                      name === "pendapatan" ? formatPrice(value) : value,
+                    formatter={(value: any, name: any) => [
+                      name === "pendapatan" ? formatPrice(Number(value) || 0) : value,
                       name === "pendapatan" ? "Pendapatan" : "Pesanan",
                     ]}
                   />
