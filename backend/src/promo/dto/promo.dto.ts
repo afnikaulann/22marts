@@ -1,12 +1,4 @@
-import {
-  IsString,
-  IsOptional,
-  IsEnum,
-  IsNumber,
-  IsBoolean,
-  IsArray,
-  IsDateString,
-} from 'class-validator';
+import { IsString, IsOptional, IsEnum, IsNumber, IsBoolean, IsArray, IsDateString } from 'class-validator';
 
 export class CreatePromoDto {
   @IsString()

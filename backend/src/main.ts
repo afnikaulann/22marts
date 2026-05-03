@@ -12,7 +12,7 @@ async function bootstrap() {
       'http://localhost:3000',
       'http://127.0.0.1:3000',
       'https://22mart.my.id',
-      'http://43.129.50.42:3000',
+      'http://43.129.50.42:3000'
     ],
     credentials: true,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',

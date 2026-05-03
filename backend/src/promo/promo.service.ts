@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  NotFoundException,
-  BadRequestException,
-} from '@nestjs/common';
+import { Injectable, NotFoundException, BadRequestException } from '@nestjs/common';
 import { PrismaService } from '../prisma/prisma.service';
 
 @Injectable()
@@ -11,21 +7,21 @@ export class PromoService {
 
   async findAll() {
     return this.prisma.promo.findMany({
-      include: {
+      include: { 
         categories: true,
-        products: { select: { id: true, name: true } },
+        products: { select: { id: true, name: true } }
       },
       orderBy: { createdAt: 'desc' },
     });
   }
 
   async findOne(id: string) {
-    const promo = await this.prisma.promo.findUnique({
+    const promo = await this.prisma.promo.findUnique({ 
       where: { id },
-      include: {
+      include: { 
         categories: true,
-        products: { select: { id: true, name: true } },
-      },
+        products: { select: { id: true, name: true } }
+      }
     });
     if (!promo) throw new NotFoundException('Promo tidak ditemukan');
     return promo;
@@ -69,71 +65,65 @@ export class PromoService {
 
       if (categoryIds) {
         createData.categories = {
-          connect: categoryIds.map((id) => ({ id })),
+          connect: categoryIds.map(id => ({ id }))
         };
       }
 
       if (productIds) {
         createData.products = {
-          connect: productIds.map((id) => ({ id })),
+          connect: productIds.map(id => ({ id }))
         };
       }
 
       return await this.prisma.promo.create({
         data: createData,
-        include: { categories: true, products: true },
+        include: { categories: true, products: true }
       });
     } catch (error) {
       console.error('Create Promo Error:', error);
-      throw new BadRequestException(
-        'Gagal membuat promo: ' +
-          (error.message || 'Terjadi kesalahan pada server'),
-      );
+      throw new BadRequestException('Gagal membuat promo: ' + (error.message || 'Terjadi kesalahan pada server'));
     }
   }
 
-  async update(
-    id: string,
-    data: {
-      code?: string;
-      description?: string;
-      discountType?: 'PERCENTAGE' | 'FIXED';
-      discountValue?: number;
-      minPurchase?: number;
-      maxDiscount?: number;
-      usageLimit?: number;
-      perUserLimit?: number;
-      startDate?: string;
-      endDate?: string;
-      isActive?: boolean;
-      categoryIds?: string[];
-      productIds?: string[];
-    },
-  ) {
+  async update(id: string, data: {
+    code?: string;
+    description?: string;
+    discountType?: 'PERCENTAGE' | 'FIXED';
+    discountValue?: number;
+    minPurchase?: number;
+    maxDiscount?: number;
+    usageLimit?: number;
+    perUserLimit?: number;
+    startDate?: string;
+    endDate?: string;
+    isActive?: boolean;
+    categoryIds?: string[];
+    productIds?: string[];
+  }) {
     await this.findOne(id);
-
+ 
     const { categoryIds, productIds, ...rest } = data;
     const updateData: any = { ...rest };
     if (data.code) updateData.code = data.code.toUpperCase();
     if (data.startDate) updateData.startDate = new Date(data.startDate);
     if (data.endDate) updateData.endDate = new Date(data.endDate);
-
+    
     if (categoryIds) {
       updateData.categories = {
-        set: categoryIds.map((id) => ({ id })),
+        set: categoryIds.map(id => ({ id }))
       };
     }
-
+    
     if (productIds) {
       updateData.products = {
-        set: productIds.map((id) => ({ id })),
+        set: productIds.map(id => ({ id }))
       };
     }
 
     return this.prisma.promo.update({
       where: { id },
       data: updateData,
-      include: { categories: true, products: true },
+      include: { categories: true, products: true }
     });
   }
 
@@ -174,9 +164,7 @@ export class PromoService {
         where: { userId_promoId: { userId, promoId: promo.id } },
       });
       if (userUsage) {
-        throw new BadRequestException(
-          'Anda sudah pernah menggunakan promo ini',
-        );
+        throw new BadRequestException('Anda sudah pernah menggunakan promo ini');
       }
     }
 
@@ -196,32 +184,26 @@ export class PromoService {
         where: { userId },
         include: { product: true },
       });
-
-      const allowedCategoryIds = promo.categories.map((c) => c.id);
-      const allowedProductIds = promo.products.map((p) => p.id);
-
-      const applicableItems = cartItems.filter(
-        (item) =>
-          (allowedCategoryIds.length > 0 &&
-            allowedCategoryIds.includes(item.product.categoryId)) ||
-          (allowedProductIds.length > 0 &&
-            allowedProductIds.includes(item.productId)),
+ 
+      const allowedCategoryIds = promo.categories.map(c => c.id);
+      const allowedProductIds = promo.products.map(p => p.id);
+      
+      const applicableItems = cartItems.filter(item => 
+        (allowedCategoryIds.length > 0 && allowedCategoryIds.includes(item.product.categoryId)) ||
+        (allowedProductIds.length > 0 && allowedProductIds.includes(item.productId))
       );
-
+ 
       if (applicableItems.length === 0) {
-        throw new BadRequestException(
-          'Promo ini tidak berlaku untuk produk di keranjang Anda',
-        );
+        throw new BadRequestException('Promo ini tidak berlaku untuk produk di keranjang Anda');
       }
-
-      applicableSubtotal = applicableItems.reduce(
-        (sum, item) => sum + item.product.price * item.quantity,
-        0,
+ 
+      applicableSubtotal = applicableItems.reduce((sum, item) => 
+        sum + (item.product.price * item.quantity), 0
       );
     }
 
     if (promo.discountType === 'PERCENTAGE') {
-      discount = Math.floor((applicableSubtotal * promo.discountValue) / 100);
+      discount = Math.floor(applicableSubtotal * promo.discountValue / 100);
       if (promo.maxDiscount && discount > promo.maxDiscount) {
         discount = promo.maxDiscount;
       }
@@ -242,8 +224,8 @@ export class PromoService {
         discountValue: promo.discountValue,
         minPurchase: promo.minPurchase,
         maxDiscount: promo.maxDiscount,
-        categories: promo.categories.map((c) => ({ id: c.id, name: c.name })),
-        products: promo.products.map((p) => ({ id: p.id, name: p.name })),
+        categories: promo.categories.map(c => ({ id: c.id, name: c.name })),
+        products: promo.products.map(p => ({ id: p.id, name: p.name })),
       },
       discount,
       applicableSubtotal,

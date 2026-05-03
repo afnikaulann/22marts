@@ -1,11 +1,4 @@
-import {
-  Controller,
-  Post,
-  Patch,
-  Body,
-  HttpCode,
-  HttpStatus,
-} from '@nestjs/common';
+import { Controller, Post, Patch, Body, HttpCode, HttpStatus } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { RegisterDto, LoginDto } from './dto';
 
@@ -30,13 +23,7 @@ export class AuthController {
   }
 
   @Patch('password')
-  changePassword(
-    @Body() body: { userId: string; oldPassword: string; newPassword: string },
-  ) {
-    return this.authService.changePassword(
-      body.userId,
-      body.oldPassword,
-      body.newPassword,
-    );
+  changePassword(@Body() body: { userId: string; oldPassword: string; newPassword: string }) {
+    return this.authService.changePassword(body.userId, body.oldPassword, body.newPassword);
   }
 }

@@ -32,7 +32,10 @@ export class FavoriteController {
   }
 
   @Post('toggle')
-  toggle(@Body('userId') userId: string, @Body('productId') productId: string) {
+  toggle(
+    @Body('userId') userId: string,
+    @Body('productId') productId: string,
+  ) {
     return this.favoriteService.toggle(userId, productId);
   }
 

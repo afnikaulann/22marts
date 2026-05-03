@@ -89,23 +89,13 @@ export class AuthService {
     const user = await this.prisma.user.update({
       where: { id: userId },
       data,
-      select: {
-        id: true,
-        name: true,
-        email: true,
-        role: true,
-        createdAt: true,
-      },
+      select: { id: true, name: true, email: true, role: true, createdAt: true },
     });
 
     return { message: 'Profil berhasil diupdate', user };
   }
 
-  async changePassword(
-    userId: string,
-    oldPassword: string,
-    newPassword: string,
-  ) {
+  async changePassword(userId: string, oldPassword: string, newPassword: string) {
     const user = await this.prisma.user.findUnique({ where: { id: userId } });
     if (!user) throw new UnauthorizedException('User tidak ditemukan');
 

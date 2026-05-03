@@ -24,7 +24,7 @@ export class NewsletterService {
 
   async getAll() {
     return this.prisma.newsletterSubscriber.findMany({
-      orderBy: { createdAt: 'desc' },
+      orderBy: { createdAt: 'desc' }
     });
   }
 }
