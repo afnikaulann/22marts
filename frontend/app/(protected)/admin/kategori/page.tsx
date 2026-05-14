@@ -186,12 +186,12 @@ export default function KelolaKategoriPage() {
                         <td className="px-4 py-3">
                           <div className="flex items-center gap-3">
                             {category.thumbnail ? (
-                              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-zinc-100">
+                              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-zinc-100 bg-zinc-50">
                                 <Image 
                                   src={category.thumbnail} 
                                   alt={category.name} 
                                   fill 
-                                  className="object-cover"
+                                  className="object-contain p-1"
                                 />
                               </div>
                             ) : category.icon ? (
@@ -199,12 +199,12 @@ export default function KelolaKategoriPage() {
                                 {category.icon}
                               </div>
                             ) : (
-                              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-zinc-100">
+                              <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-zinc-100 bg-zinc-50">
                                 <Image 
                                   src={getCategoryImage(category.name)} 
                                   alt={category.name} 
                                   fill 
-                                  className="object-cover opacity-60 grayscale-[0.5]"
+                                  className="object-contain p-1"
                                 />
                               </div>
                             )}
@@ -249,12 +249,12 @@ export default function KelolaKategoriPage() {
                   <div key={category.id} className="p-4 space-y-2">
                     <div className="flex items-center gap-3">
                       {category.thumbnail ? (
-                        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-zinc-100">
+                        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-zinc-100 bg-zinc-50">
                           <Image 
                             src={category.thumbnail} 
                             alt={category.name} 
                             fill 
-                            className="object-cover"
+                            className="object-contain p-1"
                           />
                         </div>
                       ) : category.icon ? (
@@ -262,12 +262,12 @@ export default function KelolaKategoriPage() {
                           {category.icon}
                         </div>
                       ) : (
-                        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-zinc-100">
+                        <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-lg border border-zinc-100 bg-zinc-50">
                           <Image 
                             src={getCategoryImage(category.name)} 
                             alt={category.name} 
                             fill 
-                            className="object-cover opacity-60 grayscale-[0.5]"
+                            className="object-contain p-1"
                           />
                         </div>
                       )}

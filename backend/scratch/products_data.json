@@ -1,0 +1,314 @@
+[
+  {
+    "id": "cmp2rnc4h000band8athi765m",
+    "name": "WALLS SWEET CORN",
+    "category": "Minuman dan Eskrim",
+    "description": "Bentuknya unik kayak jagung, rasanya pun jagung manis banget. Dibungkus wafer lembut yang enak dimakan."
+  },
+  {
+    "id": "cmp2r5mx00007and8jkpnn52p",
+    "name": "AICE CRISPY BALL",
+    "category": "Minuman dan Eskrim",
+    "description": "Seru banget makan es krim yang ada bola-bola biskuit renyahnya. Tekstur crunchy-nya bener-bener juara!"
+  },
+  {
+    "id": "cmp2qzy9y0003and8kwaj9cpp",
+    "name": "AICE MOCHI COKLAT PACK",
+    "category": "Minuman dan Eskrim",
+    "description": "Kulit mochi yang lembut dan kenyal berpadu dengan es krim cokelat yang dingin. Unik dan bikin ketagihan!"
+  },
+  {
+    "id": "cmp2rqgue000dand8ja8f1ko7",
+    "name": "WALLS OREO STICK 80ML ",
+    "category": "Minuman dan Eskrim",
+    "description": "Es krim vanila lembut dengan potongan biskuit Oreo asli. Dilapis cokelat tebal yang juga ada remahan Oreo-nya."
+  },
+  {
+    "id": "cmp2swtph000dz7hv8uy80o0i",
+    "name": "WALLS FEAST CHOCOLATE 65ML ",
+    "category": "Minuman dan Eskrim",
+    "description": "Klasik banget! Es krim stik dengan lapisan cokelat kacang yang gurih dan renyah. Selalu jadi pilihan favorit."
+  },
+  {
+    "id": "cmo8u1n64000d59dowycb25yp",
+    "name": "Aqua 1500 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Air mineral dari sumber pegunungan alami. Bener-bener murni dan seger buat balikin hidrasi tubuh kamu."
+  },
+  {
+    "id": "cmo8txll1000a59doajggyd30",
+    "name": "ABC Lechee Juice 250 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman jus leci dengan rasa manis segar dan aroma buah yang khas, memberikan sensasi menyegarkan di setiap tegukan. Dikemas praktis ukuran 250 ml sehingga cocok menjadi pilihan minuman sehari-hari saat beraktivitas maupun bersantai."
+  },
+  {
+    "id": "cmo8tuhes000859do0x9tvyhc",
+    "name": "ABC Kopi Mocca 27 Gram",
+    "category": "Minuman dan Eskrim",
+    "description": "Kopi instan varian mocca dengan perpaduan rasa kopi dan cokelat yang lembut serta aroma yang nikmat. Praktis diseduh kapan saja untuk menemani waktu santai maupun aktivitas harian, dengan cita rasa manis yang pas dan tekstur minuman yang creamy."
+  },
+  {
+    "id": "cmo8u0iim000c59dor1pwffo3",
+    "name": "Ades 600 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Air mineral kemasan 600 ml dengan rasa segar dan kualitas yang terjaga untuk membantu memenuhi kebutuhan hidrasi sehari-hari. Dikemas praktis sehingga mudah dibawa saat bekerja, sekolah, olahraga, maupun bepergian agar tubuh tetap terasa segar sepanjang hari."
+  },
+  {
+    "id": "cmo8tq7a9000559dolffiaw5m",
+    "name": "ABC Juice Mangga 250 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman jus mangga dengan rasa manis dan segar dari buah mangga pilihan yang nikmat di setiap tegukan. Dikemas praktis dalam ukuran 250 ml sehingga cocok dinikmati kapan saja untuk menemani aktivitas harian maupun saat bersantai bersama keluarga dan teman."
+  },
+  {
+    "id": "cmo8trgyp000659dozrb0d81f",
+    "name": "ABC Juice Sirsak 250 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman jus sirsak dengan perpaduan rasa manis dan segar yang cocok dinikmati saat cuaca panas maupun waktu santai. Memiliki aroma buah yang khas dan kemasan praktis 250 ml sehingga mudah dibawa dan dinikmati kapan saja."
+  },
+  {
+    "id": "cmo8tw3lu000959do7tut4v52",
+    "name": "ABC Kopi Susu Btl 200 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman kopi susu siap minum dengan perpaduan rasa kopi dan susu yang creamy serta nikmat di setiap tegukan. Dikemas dalam botol praktis 200 ml sehingga mudah dibawa dan cocok dinikmati kapan saja saat bekerja, belajar, maupun bersantai."
+  },
+  {
+    "id": "cmo8tt6yr000759do6qjeu66r",
+    "name": "ABC Klepon 25 Gram",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman instan rasa klepon dengan perpaduan manis gula aren dan aroma khas yang menggugah selera. Memberikan sensasi rasa tradisional yang unik dan cocok dinikmati hangat saat bersantai bersama keluarga maupun teman."
+  },
+  {
+    "id": "cmo8tzdny000b59dolp41ogax",
+    "name": "Adem Sari Ching Ku Herbal Lemon 320 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman herbal rasa lemon yang memberikan sensasi segar dan nyaman di tenggorokan. Cocok dinikmati dingin saat cuaca panas maupun setelah beraktivitas, dengan perpaduan rasa lemon yang menyegarkan dan praktis dikonsumsi kapan saja."
+  },
+  {
+    "id": "cmoa0fam5000ds9dor5owm11m",
+    "name": "Aice Bingo Chocolate 40 Gram",
+    "category": "Minuman dan Eskrim",
+    "description": "Es krim stik dengan lapisan cokelat yang renyah di luar dan lembut di dalam. Pas banget buat nemenin waktu santai kamu!"
+  },
+  {
+    "id": "cmoa0k1rm000fs9donh70rt7k",
+    "name": "Aice Chocolate Crispy 60 Gram",
+    "category": "Minuman dan Eskrim",
+    "description": "Sensasi kriuk biskuitnya berpadu sempurna dengan es krim cokelat yang creamy. Camilan dingin yang nggak bakal ngebosenin."
+  },
+  {
+    "id": "cmoa0mzmz000hs9dofl40uw8w",
+    "name": "Aice Choco Malt 49 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Paduan rasa malt yang khas dan cokelat yang manisnya pas. Ringan di lidah dan bener-bener nyegerin."
+  },
+  {
+    "id": "cmoa0lmc6000gs9douekur7ec",
+    "name": "Aice Chocolate Max",
+    "category": "Minuman dan Eskrim",
+    "description": "Buat kamu pecinta cokelat sejati, rasakan kelezatan cokelat yang intens dan melimpah dalam setiap gigitannya."
+  },
+  {
+    "id": "cmoa0pev0000is9dog5q0x68o",
+    "name": "Aice Durian Cup",
+    "category": "Minuman dan Eskrim",
+    "description": "Aroma duriannya dapet banget! Es krim cup praktis dengan rasa durian yang legit dan autentik."
+  },
+  {
+    "id": "cmoa0rbo8000js9doowd8pbk8",
+    "name": "Aice Mochi Chocolate 45 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Kenyal di luar, lumer di dalam! Mochi dingin dengan isian cokelat ini memberikan sensasi ngemil yang beda dari biasanya."
+  },
+  {
+    "id": "cmoa0vatu0000vjdoqg59za7k",
+    "name": "Aice Strawberry",
+    "category": "Minuman dan Eskrim",
+    "description": "Rasa stroberinya seger banget dengan paduan manis dan sedikit asam yang pas. Mood booster buat hari yang panas."
+  },
+  {
+    "id": "cmoa0wogb0001vjdofri6s2d4",
+    "name": "Aice Strawberry Cup",
+    "category": "Minuman dan Eskrim",
+    "description": "Rasa stroberinya seger banget dengan paduan manis dan sedikit asam yang pas. Mood booster buat hari yang panas."
+  },
+  {
+    "id": "cmp2rx63v000hand8xe4tzevf",
+    "name": "WALLS CORNETTO MINI OREO CHOCO VANILLA",
+    "category": "Minuman dan Eskrim",
+    "description": "Ukurannya imut tapi rasanya maksimal. Pas banget buat camilan cepat yang bikin happy."
+  },
+  {
+    "id": "cmp2s18uw000jand87muxibi1",
+    "name": "WALLS CORNETTO MINI CHOCOLATE VANILLA ",
+    "category": "Minuman dan Eskrim",
+    "description": "Ukurannya imut tapi rasanya maksimal. Pas banget buat camilan cepat yang bikin happy."
+  },
+  {
+    "id": "cmp2r1hjn0005and8uykwepgw",
+    "name": "AICE SEMANGKA 65GR",
+    "category": "Minuman dan Eskrim",
+    "description": "Bentuknya lucu kayak potongan semangka beneran! Seger banget dan ada butiran cokelat renyah sebagai bijinya."
+  },
+  {
+    "id": "cmp2ruk9t000fand8ifb2ik8h",
+    "name": "WALLS CORNETTO SILVER QUEEN",
+    "category": "Minuman dan Eskrim",
+    "description": "Perpaduan mewah es krim Wall's dengan potongan cokelat SilverQueen dan kacang mete. Kelezatan kelas atas dalam satu cone!"
+  },
+  {
+    "id": "cmp2mn3je0001t1s6usf5wpvp",
+    "name": "PADLE POP UPIN IPIN",
+    "category": "Minuman dan Eskrim",
+    "description": "Petualangan rasa seru bersama karakter favorit Upin & Ipin! Es krim stik yang ceria dengan kombinasi rasa buah yang disukai anak-anak, aman dan higienis untuk dikonsumsi setiap hari."
+  },
+  {
+    "id": "cmp2rjxjl0009and8tu7ch3oh",
+    "name": "WALLS TWISTER GRAPE LYCHEE",
+    "category": "Minuman dan Eskrim",
+    "description": "Ulir warna-warni dengan rasa anggur dan leci yang super seger. Pilihan paling oke buat mendinginkan suasana."
+  },
+  {
+    "id": "cmp2qu1xa0001and8mm4g4gkp",
+    "name": "WALLS PADDLE POP CHOCO LAVA 50ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Hati-hati ketagihan sama lelehan cokelat di dalemnya! Es krim cokelat yang lumer banget pas digigit."
+  },
+  {
+    "id": "cmp2szhj8000fz7hvmpn0v5fl",
+    "name": "WALLS CRUNCHY MILKY BERRY ",
+    "category": "Minuman dan Eskrim",
+    "description": "Gurihnya susu ketemu seger stroberi, dibalut cokelat putih yang renyah. Mewah dan unik rasanya!"
+  },
+  {
+    "id": "cmp2t664p000hz7hvab354rc0",
+    "name": "AICE NANAS 65GR",
+    "category": "Minuman dan Eskrim",
+    "description": "Segernya buah nanas tropis dalam setiap gigitan. Cocok buat kamu yang pengen yang dingin dan buah banget."
+  },
+  {
+    "id": "cmp2teqqs000lz7hv99gdv1hn",
+    "name": "AICE BERRY CONE",
+    "category": "Minuman dan Eskrim",
+    "description": "Cone renyah dengan es krim rasa beri yang manis dan segar. Ada saus buahnya juga di tengah, makin mantap!"
+  },
+  {
+    "id": "cmp2sox7b0007z7hvujx5wxik",
+    "name": "WALLS PADDLE POP TWISTER MAGIC 55ML ",
+    "category": "Minuman dan Eskrim",
+    "description": "Es krim twister dengan warna-warni \"ajaib\" yang menarik. Menawarkan ledakan rasa buah yang segar dalam setiap putaran ulirnya."
+  },
+  {
+    "id": "cmp2sl4jy0005z7hvgi6v27ot",
+    "name": "WALLS POP MINION CUP 90ML ",
+    "category": "Minuman dan Eskrim",
+    "description": "Es krim cup edisi Minion yang lucu dan rasanya nyegerin. Anak-anak pasti suka sama perpaduan warnanya."
+  },
+  {
+    "id": "cmp2srshc0009z7hvigr3zeoa",
+    "name": "WALLS NEOPOLITANA 350ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Satu wadah dapet tiga rasa langsung: Cokelat, Vanila, dan Stroberi. Paling pas buat dinikmati bareng-bareng keluarga."
+  },
+  {
+    "id": "cmp2t8nmj000jz7hvrw1wjvkz",
+    "name": "AICE MILK MELON 50GR",
+    "category": "Minuman dan Eskrim",
+    "description": "Harum melonnya kerasa banget dipadu dengan lembutnya susu. Es krim yang bikin suasana hati jadi adem."
+  },
+  {
+    "id": "cmp2sikjo0003z7hv47tgn3y8",
+    "name": "WALLS POPULAIRE COKLAT VANILA CUP ",
+    "category": "Minuman dan Eskrim",
+    "description": "Es krim cup klasik dengan saus stroberi atau cokelat di atasnya. Teksturnya lembut banget, favorit sepanjang masa."
+  },
+  {
+    "id": "cmp2stva4000bz7hv4u6kcbwk",
+    "name": "WALLS FEAST VANILLA 65ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Klasik banget! Es krim stik dengan lapisan cokelat kacang yang gurih dan renyah. Selalu jadi pilihan favorit."
+  },
+  {
+    "id": "cmp3u3myg000j1269ojedpqbn",
+    "name": "AQUA 330 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Air mineral kemasan 330 ml yang praktis dibawa ke mana saja dan cocok menemani aktivitas harian. Dengan kualitas air yang terjaga dan rasa yang menyegarkan, produk ini pas dikonsumsi saat bekerja, belajar, olahraga, maupun bepergian agar tubuh tetap terhidrasi dengan baik."
+  },
+  {
+    "id": "cmp3u3n3a000l1269rkgd85nq",
+    "name": "AQUA 600 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Air mineral segar dalam kemasan 600 ml yang praktis untuk kebutuhan minum sehari-hari. Cocok dikonsumsi kapan saja dengan kualitas air yang higienis dan menyegarkan, membantu memenuhi kebutuhan cairan tubuh saat beraktivitas di rumah, sekolah, kantor, maupun perjalanan."
+  },
+  {
+    "id": "cmp3u3n7r000n1269ga67yhg6",
+    "name": "AQUA GELAS 220 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Air mineral dalam kemasan gelas 220 ml yang praktis disajikan untuk berbagai kebutuhan acara, rapat, maupun konsumsi sehari-hari. Memiliki kualitas air yang higienis dan rasa segar, sehingga nyaman dinikmati kapan saja untuk membantu menjaga kebutuhan cairan tubuh."
+  },
+  {
+    "id": "cmp3u3ln100011269w5aay9as",
+    "name": "ABC KOPI MOCCA 27GR",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman kopi instan rasa mocca yang memadukan aroma kopi khas dengan rasa cokelat yang lembut dan nikmat. Cocok dinikmati hangat maupun dingin sebagai teman bersantai atau menemani aktivitas sehari-hari dengan penyajian yang praktis."
+  },
+  {
+    "id": "cmp3u3ma400091269be33pfpd",
+    "name": "ABC KOPI SUSU BTL 200ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Kopi susu siap minum dengan rasa lembut dan aroma kopi yang khas, cocok untuk menemani aktivitas sehari-hari. Memiliki tekstur creamy yang nikmat dan kemasan praktis sehingga mudah dinikmati kapan saja dalam keadaan dingin maupun suhu normal."
+  },
+  {
+    "id": "cmp3u3m3500071269qvd0vekb",
+    "name": "ABC KOPI SUSU 30GR - SEDUH",
+    "category": "Minuman dan Eskrim",
+    "description": "Kopi susu instan yang praktis diseduh dengan rasa creamy dan aroma kopi yang khas. Cocok dinikmati saat pagi hari maupun waktu santai untuk memberikan sensasi hangat dan rasa nikmat di setiap tegukan."
+  },
+  {
+    "id": "cmp3u3me6000b1269p7pmm8ul",
+    "name": "ABC KOPI SUSU GULA AREN 27GR",
+    "category": "Minuman dan Eskrim",
+    "description": "Kopi susu instan dengan perpaduan rasa kopi dan manis alami gula aren yang khas dan menggugah selera. Memiliki aroma yang nikmat dan praktis disajikan, cocok dinikmati kapan saja sebagai teman santai maupun saat beraktivitas."
+  },
+  {
+    "id": "cmp3u3oi600111269mk2agmz8",
+    "name": "FLORIDINA COCO 350ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman rasa kelapa yang menyegarkan dengan perpaduan rasa manis yang pas di setiap tegukan. Cocok dinikmati dingin untuk menemani aktivitas harian maupun saat bersantai bersama keluarga dan teman."
+  },
+  {
+    "id": "cmp3u3omo00131269w7iexh98",
+    "name": "FLORIDINA ORANGE 350ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman jeruk segar dengan rasa manis dan aroma buah yang khas, memberikan sensasi menyegarkan saat diminum. Dikemas praktis ukuran 350 ml sehingga cocok dinikmati kapan saja untuk membantu melepas dahaga."
+  },
+  {
+    "id": "cmp3u3odq000z1269hgvgqnv3",
+    "name": "ESPRESSO KOPI SUSU SAK 135G",
+    "category": "Minuman dan Eskrim",
+    "description": "Kopi susu instan dengan rasa creamy dan aroma kopi yang khas, cocok dinikmati kapan saja sebagai teman santai maupun aktivitas harian. Praktis disajikan dengan cita rasa yang lembut dan nikmat di setiap seduhan."
+  },
+  {
+    "id": "cmp3u3mtn000h1269fz3j4jvw",
+    "name": "AQUA 1500 ML",
+    "category": "Minuman dan Eskrim",
+    "description": "Air mineral dari sumber pegunungan alami. Bener-bener murni dan seger buat balikin hidrasi tubuh kamu."
+  },
+  {
+    "id": "cmp3u3ow800171269d9yeccdh",
+    "name": "FROSTBITE KOPI JELLY GULA AREN 6OML",
+    "category": "Minuman dan Eskrim",
+    "description": "Seru banget minum kopi yang ada potongan jelly kenyalnya. Kopi gula arennya berasa, teksturnya dapet."
+  },
+  {
+    "id": "cmp2sf2ui0001z7hvhioh54d2",
+    "name": "WALLS POPULAIRE STRAWBERRY VANILLA CUP",
+    "category": "Minuman dan Eskrim",
+    "description": "Es krim cup klasik dengan saus stroberi atau cokelat di atasnya. Teksturnya lembut banget, favorit sepanjang masa."
+  },
+  {
+    "id": "cmp3u3p0d00191269zbt4ajnx",
+    "name": "GOLDA COFFEE CAPPUCCINO",
+    "category": "Minuman dan Eskrim",
+    "description": "Minuman kopi cappuccino siap minum dengan perpaduan rasa kopi dan susu yang creamy serta aroma yang menggugah selera. Cocok dinikmati dingin untuk menemani aktivitas sehari-hari maupun saat bersantai agar suasana terasa lebih nikmat."
+  }
+]
