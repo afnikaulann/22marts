@@ -57,12 +57,12 @@ export default function NewArrivalsPage() {
               <h3 className="mt-4 text-lg font-medium text-zinc-900">Belum ada produk baru</h3>
             </div>
           ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-4">
               {products.map((product) => (
                 <Link key={product.id} href={`/produk/${product.slug || product.id}`} className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all hover:border-zinc-300 hover:shadow-md">
-                  <div className="relative aspect-square bg-zinc-100">
+                  <div className="relative aspect-square bg-white border-b border-zinc-100">
                     {product.thumbnail ? (
-                      <img src={product.thumbnail} alt={product.name} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                      <img src={product.thumbnail} alt={product.name} className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105" />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center">
                         <ImageIcon className="h-10 w-10 text-zinc-300" />

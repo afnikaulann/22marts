@@ -194,17 +194,17 @@ export default async function Home() {
               </Link>
             </div>
 
-            <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-5 md:grid-cols-3 lg:grid-cols-4">
               {dbProducts.map((product) => (
                 <Link key={product.id} href={`/produk/${product.slug}`} className="group">
-                  <div className="relative aspect-square overflow-hidden rounded-2xl bg-sky-50">
+                  <div className="relative aspect-square overflow-hidden rounded-2xl bg-white border border-zinc-100">
                     {product.thumbnail ? (
                       <Image 
                         src={product.thumbnail} 
                         alt={product.name} 
                         fill 
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" 
-                        className="object-cover transition-transform duration-300 group-hover:scale-105" 
+                        className="object-contain p-3 transition-transform duration-300 group-hover:scale-105" 
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center">

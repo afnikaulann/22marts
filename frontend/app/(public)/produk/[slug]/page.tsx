@@ -226,9 +226,9 @@ export default function ProductDetailPage() {
             <div className="lg:col-span-3">
               <div className="sticky top-20 space-y-3">
                 <div className="relative overflow-hidden rounded-lg border border-zinc-200 bg-white">
-                  <div className="aspect-square bg-zinc-50">
+                  <div className="aspect-square bg-white">
                     {product.thumbnail ? (
-                      <img src={product.thumbnail} alt={product.name} className="h-full w-full object-cover" />
+                      <img src={product.thumbnail} alt={product.name} className="h-full w-full object-contain p-4" />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center">
                         <ImageIcon className="h-16 w-16 text-zinc-300" />
@@ -451,19 +451,19 @@ export default function ProductDetailPage() {
                   Lihat semua <ChevronRight className="h-4 w-4" />
                 </Link>
               </div>
-              <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="mt-3 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
                 {relatedProducts.map((p) => (
                   <Link
                     key={p.id}
                     href={`/produk/${p.slug}`}
                     className="group overflow-hidden rounded-lg border border-zinc-200 bg-white transition-shadow hover:shadow-md"
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+                    <div className="relative aspect-square overflow-hidden bg-white border-b border-zinc-100">
                       {p.thumbnail ? (
                         <img
                           src={p.thumbnail}
                           alt={p.name}
-                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          className="h-full w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105"
                         />
                       ) : (
                         <div className="flex h-full w-full items-center justify-center">

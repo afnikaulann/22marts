@@ -144,14 +144,14 @@ function ProductsContent() {
                   <div className="mt-2 space-y-0.5">
                     <button
                       onClick={() => setSelectedCategory("")}
-                      className={`flex w-full items-center justify-between rounded-lg px-2 py-1.5 text-[13px] transition-colors ${
+                      className={`flex w-full items-start justify-between rounded-lg px-2 py-1.5 text-[13px] transition-colors ${
                         !selectedCategory
                           ? "bg-zinc-900 font-medium text-white"
                           : "text-zinc-600 hover:bg-zinc-100"
                       }`}
                     >
-                      <span>Semua Produk</span>
-                      <span className={`text-xs ${!selectedCategory ? "text-zinc-400" : "text-zinc-400"}`}>
+                      <span className="text-left">Semua Produk</span>
+                      <span className={`text-xs mt-0.5 shrink-0 ${!selectedCategory ? "text-zinc-400" : "text-zinc-400"}`}>
                         {products.length}
                       </span>
                     </button>
@@ -166,17 +166,17 @@ function ProductsContent() {
                               router.push(`/produk?category=${selectedCategory === cat.id ? "" : cat.id}${search ? `&search=${search}` : ""}`);
                             }
                           }}
-                          className={`flex w-full items-center justify-between rounded-lg px-2.5 py-1.5 text-[13px] transition-colors ${
+                          className={`flex w-full items-start justify-between rounded-lg px-2.5 py-1.5 text-[13px] transition-colors ${
                             selectedCategory === cat.id
                               ? "bg-zinc-900 font-medium text-white"
                               : "text-zinc-600 hover:bg-zinc-100"
                           }`}
                         >
-                          <span className="flex items-center gap-2">
-                            {cat.icon && <span>{cat.icon}</span>}
-                            {cat.name}
+                          <span className="flex items-start gap-2 text-left">
+                            {cat.icon && <span className="mt-0.5 shrink-0">{cat.icon}</span>}
+                            <span>{cat.name}</span>
                           </span>
-                          <span className={`text-xs ${selectedCategory === cat.id ? "text-zinc-400" : "text-zinc-400"}`}>
+                          <span className={`text-xs mt-0.5 shrink-0 ${selectedCategory === cat.id ? "text-zinc-400" : "text-zinc-400"}`}>
                             {count}
                           </span>
                         </button>
@@ -354,7 +354,7 @@ function ProductsContent() {
                   </Button>
                 </div>
               ) : (
-                <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                <div className="mt-4 grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                   {filteredProducts.map((product) => (
                     <Link
                       key={product.id}
@@ -362,12 +362,12 @@ function ProductsContent() {
                       className="group overflow-hidden rounded-xl border border-zinc-200 bg-white transition-shadow hover:shadow-md"
                     >
                       {/* Image */}
-                      <div className="relative aspect-[4/3] overflow-hidden bg-zinc-100">
+                      <div className="relative aspect-square overflow-hidden bg-white border-b border-zinc-100">
                         {product.thumbnail ? (
                           <img
                             src={product.thumbnail}
                             alt={product.name}
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-105"
                           />
                         ) : (
                           <div className="flex h-full w-full items-center justify-center">
@@ -484,15 +484,15 @@ function ProductsContent() {
                           router.push(`/produk?category=${cat.id}${search ? `&search=${search}` : ""}`);
                         }
                       }}
-                      className={`flex w-full items-center justify-between rounded-lg px-2.5 py-2 text-[13px] ${
+                      className={`flex w-full items-start justify-between rounded-lg px-2.5 py-2 text-[13px] ${
                         selectedCategory === cat.id ? "bg-zinc-900 font-medium text-white" : "text-zinc-600 hover:bg-zinc-100"
                       }`}
                     >
-                      <span className="flex items-center gap-2">
-                        {cat.icon && <span>{cat.icon}</span>}
-                        {cat.name}
+                      <span className="flex items-start gap-2 text-left">
+                        {cat.icon && <span className="mt-0.5 shrink-0">{cat.icon}</span>}
+                        <span>{cat.name}</span>
                       </span>
-                      <span className="text-xs">{count}</span>
+                      <span className="text-xs mt-0.5 shrink-0">{count}</span>
                     </button>
                   );
                 })}

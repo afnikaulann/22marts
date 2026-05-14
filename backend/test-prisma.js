@@ -7,10 +7,10 @@ async function main() {
     console.log('Successfully connected to the database.');
     
     // Perform a simple query
-    const usersCount = await prisma.user.count();
-    console.log(`Found ${usersCount} users in the database.`);
+    const users = await prisma.user.findMany({ take: 1 });
+    console.log('Query result:', users);
   } catch (error) {
-    console.error('Failed to connect to the database:', error);
+    console.error('Error connecting to the database:', error);
   } finally {
     await prisma.$disconnect();
   }

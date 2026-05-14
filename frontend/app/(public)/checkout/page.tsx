@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Script from "next/script";
 import { useRouter } from "next/navigation";
 import {
   ChevronRight,
@@ -216,6 +217,10 @@ export default function CheckoutPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
+      <Script 
+        src={process.env.NEXT_PUBLIC_MIDTRANS_SNAP_URL || "https://app.sandbox.midtrans.com/snap/snap.js"}
+        data-client-key={process.env.NEXT_PUBLIC_MIDTRANS_CLIENT_KEY || "SB-Mid-client-uX8jfJD1DrumWP1Q"}
+      />
       <Navbar />
 
       <main className="flex-1 bg-zinc-50">
