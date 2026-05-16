@@ -11,6 +11,7 @@ import {
   Loader2,
   ImageIcon,
   MapPin,
+  AlertCircle,
   Building2,
   Truck,
   ShieldCheck,
@@ -322,6 +323,19 @@ export default function CheckoutPage() {
                       </Link>
                     </div>
                   )}
+                </div>
+              </div>
+
+              {/* Disclaimer Area */}
+              <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+                  <div>
+                    <h3 className="text-sm font-bold text-amber-900">Perhatian Area Pengiriman</h3>
+                    <p className="mt-1 text-sm text-amber-800 leading-relaxed">
+                      Untuk pesanan dengan alamat <span className="font-bold">di luar Kabupaten Gowa</span> tidak dapat diantarkan oleh kurir kami, kecuali Anda bersedia mengambilnya langsung ke toko (Pick-up).
+                    </p>
+                  </div>
                 </div>
               </div>
 

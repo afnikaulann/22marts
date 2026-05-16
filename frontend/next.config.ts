@@ -2,8 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   turbopack: {
-    root: __dirname,
+    root: process.cwd(),
   },
+
   images: {
     remotePatterns: [
       {
@@ -23,10 +24,10 @@ const nextConfig: NextConfig = {
       },
     ],
     minimumCacheTTL: 31536000,
-    formats: ['image/avif', 'image/webp'],
+    formats: ["image/avif", "image/webp"],
   },
+
   reactStrictMode: true,
-  poweredByHeader: false,
 };
 
 export default nextConfig;

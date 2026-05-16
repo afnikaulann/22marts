@@ -13,43 +13,21 @@ function CheckoutStatus() {
   const orderId = searchParams.get("order_id");
   const statusParam = searchParams.get("status");
 
-  const [paymentStatus, setPaymentStatus] = useState<string>(statusParam || "checking");
-  const [checking, setChecking] = useState(true);
+  const [paymentStatus, setPaymentStatus] = useState<string>(statusParam || "success");
+  const [checking, setChecking] = useState(false);
 
   useEffect(() => {
-    if (orderId) {
-      verifyPayment();
+    // Jika dari callback onSuccess Midtrans (tidak ada statusParam),
+    // langsung asumsikan sukses agar user tidak menunggu lama
+    if (statusParam === "pending") {
+      setPaymentStatus("pending");
     } else {
-      setChecking(false);
+      setPaymentStatus("success");
     }
-  }, [orderId]);
-
-  async function verifyPayment() {
-    setChecking(true);
-
-    for (let i = 0; i < 10; i++) {
-      const result = await getPaymentStatus(orderId!);
-      if (result.data) {
-        if (result.data.isSuccess) {
-          setPaymentStatus("success");
-          setChecking(false);
-          return;
-        }
-        if (result.data.found && result.data.status !== "pending") {
-          setPaymentStatus(result.data.status);
-          setChecking(false);
-          return;
-        }
-      }
-      await new Promise((r) => setTimeout(r, 3000));
-    }
-
-    setPaymentStatus(statusParam === "pending" ? "pending" : "success");
-    setChecking(false);
-  }
+  }, [orderId, statusParam]);
 
   const isPending = paymentStatus === "pending";
-  const isSuccess = paymentStatus === "success" || paymentStatus === "checking";
+  const isSuccess = paymentStatus === "success";
 
   return (
     <>
@@ -98,7 +76,7 @@ function CheckoutStatus() {
               Lanjut Belanja
             </Button>
           </Link>
-          <Link href="/riwayat-pesanan">
+          <Link href="/pesanan">
             <Button variant="outline" className="h-11 w-full gap-2 text-sm font-medium mt-2">
               <Package className="h-4 w-4" />
               Lihat Pesanan Saya

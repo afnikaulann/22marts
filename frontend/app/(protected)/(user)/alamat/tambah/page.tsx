@@ -150,7 +150,7 @@ export default function TambahAlamatPage() {
             <p className="text-sm text-zinc-500 hidden sm:block">Tambahkan alamat pengiriman baru</p>
           </div>
         </div>
-        <Button className="h-9 bg-zinc-900 text-sm" onClick={() => window.location.href = "/alamat"}>Kembali</Button>
+        <Button className="h-9 bg-zinc-900 text-white text-sm" onClick={() => window.location.href = "/alamat"}>Kembali</Button>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -326,10 +326,10 @@ export default function TambahAlamatPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-3">
-          <Button type="button" className="h-10 bg-zinc-900 text-sm" onClick={() => router.back()}>
+          <Button type="button" className="h-10 bg-zinc-900 text-white text-sm" onClick={() => router.back()}>
             Batal
           </Button>
-          <Button type="submit" className="h-10 bg-zinc-900 text-sm" disabled={submitting}>
+          <Button type="submit" className="h-10 bg-zinc-900 text-white text-sm" disabled={submitting}>
             {submitting ? <Loader2 className="h-4 w-4 animate-spin" /> : "Simpan Alamat"}
           </Button>
         </div>
